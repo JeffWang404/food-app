@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { data } from '../data/data.js';
+import FilterButton from './FilterButton';
 
 const Food = () => {
   const [foods, setFoods] = useState(data);
@@ -26,66 +27,31 @@ const Food = () => {
         <div className="flex flex-col lg:flex-row justify-between">
           <p className=" font-bold text-gray-700">Filter Type</p>
           <div className="flex justify-between flex-wrap">
-            <button
-              onClick={() => setFoods(data)}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
-              All
-            </button>
-            <button
-              onClick={() => filterType('burger')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
+            <FilterButton onClick={() => setFoods(data)}>All</FilterButton>
+            <FilterButton onClick={() => filterType('burger')}>
               Burgers
-            </button>
-            <button
-              onClick={() => filterType('pizza')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
+            </FilterButton>
+            <FilterButton onClick={() => filterType('pizza')}>
               Pizza
-            </button>
-            <button
-              onClick={() => filterType('salad')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
+            </FilterButton>
+            <FilterButton onClick={() => filterType('salad')}>
               Salads
-            </button>
-            <button
-              onClick={() => filterType('chicken')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
+            </FilterButton>
+            <FilterButton onClick={() => filterType('chicken')}>
               Chicken
-            </button>
+            </FilterButton>
           </div>
         </div>
         {/* Filter Price */}
         <div>
           <p className=" font-bold text-gray-700">Fitler Price</p>
           <div className="flex justify-between max-w-[390px] w-full">
-            <button
-              onClick={() => filterPrice('$')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
-              $
-            </button>
-            <button
-              onClick={() => filterPrice('$$')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
-              $$
-            </button>
-            <button
-              onClick={() => filterPrice('$$$')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
-              $$$
-            </button>
-            <button
-              onClick={() => filterPrice('$$$$')}
-              className="m-1 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
-            >
+            <FilterButton onClick={() => filterPrice('$')}>$</FilterButton>
+            <FilterButton onClick={() => filterPrice('$$')}>$$</FilterButton>
+            <FilterButton onClick={() => filterPrice('$$$')}>$$$</FilterButton>
+            <FilterButton onClick={() => filterPrice('$$$$')}>
               $$$$
-            </button>
+            </FilterButton>
           </div>
         </div>
       </div>
